@@ -114,6 +114,7 @@ do {
          !ganador.equalsIgnoreCase(nodo.getEquipo2())));
 
 nodo.setGanador(ganador);
+
 System.out.println("Equipo 1: " + nodo.getEquipo1());
 System.out.println("Equipo 2: " + nodo.getEquipo2());
 System.out.println("Ingresado: " + ganador);
