@@ -124,12 +124,12 @@ public class ArbolFixture {
         String ganador;
         System.out.println(eq1 + " vs " + eq2);
         do {
-            System.out.println("Gaanador ");
+            System.out.println("Ingrese el ganador del partido ");
             ganador = s.nextLine().trim();
-            
+
             //validacion
-            if(!ganador.equalsIgnoreCase(eq1) && 
-                    !ganador.equalsIgnoreCase(eq2)) {
+            if (!ganador.equalsIgnoreCase(eq1)
+                    && !ganador.equalsIgnoreCase(eq2)) {
                 System.out.println("Entrada invalida. Escriba\""
                         + eq1 + "\" o \"" + eq2 + "\".");
             }
@@ -140,89 +140,108 @@ public class ArbolFixture {
     }
 
     public void cargarOctavos() {
+        try {
+            System.out.println("\n  OCTAVOS ");
 
-        System.out.println("\n  OCTAVOS ");
+            o1.setGanador(
+                    jugarPartido(o1.getEquipo1(), o1.getEquipo2()));
 
-        o1.setGanador(
-                jugarPartido(o1.getEquipo1(), o1.getEquipo2()));
+            o2.setGanador(
+                    jugarPartido(o2.getEquipo1(), o2.getEquipo2()));
 
-        o2.setGanador(
-                jugarPartido(o2.getEquipo1(), o2.getEquipo2()));
+            o3.setGanador(
+                    jugarPartido(o3.getEquipo1(), o3.getEquipo2()));
 
-        o3.setGanador(
-                jugarPartido(o3.getEquipo1(), o3.getEquipo2()));
+            o4.setGanador(
+                    jugarPartido(o4.getEquipo1(), o4.getEquipo2()));
 
-        o4.setGanador(
-                jugarPartido(o4.getEquipo1(), o4.getEquipo2()));
+            o5.setGanador(
+                    jugarPartido(o5.getEquipo1(), o5.getEquipo2()));
 
-        o5.setGanador(
-                jugarPartido(o5.getEquipo1(), o5.getEquipo2()));
+            o6.setGanador(
+                    jugarPartido(o6.getEquipo1(), o6.getEquipo2()));
 
-        o6.setGanador(
-                jugarPartido(o6.getEquipo1(), o6.getEquipo2()));
+            o7.setGanador(
+                    jugarPartido(o7.getEquipo1(), o7.getEquipo2()));
 
-        o7.setGanador(
-                jugarPartido(o7.getEquipo1(), o7.getEquipo2()));
+            o8.setGanador(
+                    jugarPartido(o8.getEquipo1(), o8.getEquipo2()));
+        } catch (NullPointerException e) {
+            System.out.println("Primero se debe cargar el fixture de octavos");
+        }
 
-        o8.setGanador(
-                jugarPartido(o8.getEquipo1(), o8.getEquipo2()));
     }
 
     public void cargarCuartos() {
 
-        System.out.println("\n CUARTOS ");
+        try {
+            System.out.println("\n CUARTOS ");
 
-        c1.setEquipo1(o1.getGanador());
-        c1.setEquipo2(o2.getGanador());
+            c1.setEquipo1(o1.getGanador());
+            c1.setEquipo2(o2.getGanador());
 
-        c1.setGanador(
-                jugarPartido(c1.getEquipo1(), c1.getEquipo2()));
+            c1.setGanador(
+                    jugarPartido(c1.getEquipo1(), c1.getEquipo2()));
 
-        c2.setEquipo1(o3.getGanador());
-        c2.setEquipo2(o4.getGanador());
+            c2.setEquipo1(o3.getGanador());
+            c2.setEquipo2(o4.getGanador());
 
-        c2.setGanador(
-                jugarPartido(c2.getEquipo1(), c2.getEquipo2()));
+            c2.setGanador(
+                    jugarPartido(c2.getEquipo1(), c2.getEquipo2()));
 
-        c3.setEquipo1(o5.getGanador());
-        c3.setEquipo2(o6.getGanador());
+            c3.setEquipo1(o5.getGanador());
+            c3.setEquipo2(o6.getGanador());
 
-        c3.setGanador(
-                jugarPartido(c3.getEquipo1(), c3.getEquipo2()));
+            c3.setGanador(
+                    jugarPartido(c3.getEquipo1(), c3.getEquipo2()));
 
-        c4.setEquipo1(o7.getGanador());
-        c4.setEquipo2(o8.getGanador());
+            c4.setEquipo1(o7.getGanador());
+            c4.setEquipo2(o8.getGanador());
 
-        c4.setGanador(
-                jugarPartido(c4.getEquipo1(), c4.getEquipo2()));
+            c4.setGanador(
+                    jugarPartido(c4.getEquipo1(), c4.getEquipo2()));
+        } catch (NullPointerException e) {
+            System.out.println("Primero se debe cargar el fixture de octavos o la fase previa");
+        }
+
     }
 
     public void cargarSemifinales() {
 
-        System.out.println("\n  SEMIS ");
+        try {
+            System.out.println("\n  SEMIS ");
 
-        s1.setEquipo1(c1.getGanador());
-        s1.setEquipo2(c2.getGanador());
+            s1.setEquipo1(c1.getGanador());
+            s1.setEquipo2(c2.getGanador());
 
-        s1.setGanador(
-                jugarPartido(s1.getEquipo1(), s1.getEquipo2()));
+            s1.setGanador(
+                    jugarPartido(s1.getEquipo1(), s1.getEquipo2()));
 
-        s2.setEquipo1(c3.getGanador());
-        s2.setEquipo2(c4.getGanador());
+            s2.setEquipo1(c3.getGanador());
+            s2.setEquipo2(c4.getGanador());
 
-        s2.setGanador(
-                jugarPartido(s2.getEquipo1(), s2.getEquipo2()));
+            s2.setGanador(
+                    jugarPartido(s2.getEquipo1(), s2.getEquipo2()));
+        } catch (NullPointerException e) {
+            System.out.println("Primero se debe cargar el fixture de octavos o la fase previa");
+        }
+
     }
 
     public void cargarFinal() {
 
-        System.out.println("\n FINAL ");
+        try {
+            System.out.println("\n FINAL ");
 
-        f.setEquipo1(s1.getGanador());
-        f.setEquipo2(s2.getGanador());
+            f.setEquipo1(s1.getGanador());
+            f.setEquipo2(s2.getGanador());
 
-        f.setGanador(
-                jugarPartido(f.getEquipo1(), f.getEquipo2()));
+            f.setGanador(
+                    jugarPartido(f.getEquipo1(), f.getEquipo2()));
+        } catch (NullPointerException e) {
+            System.out.println("Primero se debe cargar el fixture de octavos o la fase previa");
+        }
+
     }
 
     public void mostrarCampeon() {
