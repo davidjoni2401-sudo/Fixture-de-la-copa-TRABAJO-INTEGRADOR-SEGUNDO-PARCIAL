@@ -17,6 +17,19 @@ public class TPEDA {
     /**
      * @param args the command line arguments
      */
+    private static int leerEntero(Scanner s, String mensaje) {
+        while (true) {
+            System.out.print(mensaje);
+            String entrada = s.nextLine().trim();
+
+            try {
+                return Integer.parseInt(entrada);
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada invalida. Debe ingresar un numero.");
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
@@ -37,8 +50,8 @@ public class TPEDA {
             System.out.println("7- Mostrar fase");
             System.out.println("8- Salir");
 
-            op = s.nextInt();
-            s.nextLine();
+            op = leerEntero(s, "Seleccione una opcion: ");
+            
 
             while (op < 1 || op > 8) {
                 System.out.println("Opcion erronea. Elija de nuevo");
@@ -52,8 +65,8 @@ public class TPEDA {
                 System.out.println("7- Mostrar fase");
                 System.out.println("8- Salir");
 
-                op = s.nextInt();
-                s.nextLine();
+                op = leerEntero(s, "Seleccione una opcion: ");
+               
             }
             switch (op) {
 
@@ -98,7 +111,7 @@ public class TPEDA {
                     System.out.println("3- Semifinales");
                     System.out.println("4- Final");
 
-                    int fase = s.nextInt();
+                    int fase = leerEntero(s, "Seleccione una fase: ");
                     while (fase < 1 || fase > 4) {
                         System.out.println("Fase erroenea ingreso de nuevo");
                         System.out.println("Elija la fase que desea ver");
@@ -113,6 +126,11 @@ public class TPEDA {
                     break;
                 case 8:
                     exit(0);
+                    System.out.println("Programa finalizado.");
+                    break;
+
+                default:
+                    System.out.println("Opcion inexistente.");
                     break;
             }
 
