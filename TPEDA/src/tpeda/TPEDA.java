@@ -27,6 +27,7 @@ public class TPEDA {
 
         do {
 
+            System.out.println("Menu");
             System.out.println("\n1- Generar fixture");
             System.out.println("2- Cargar octavos");
             System.out.println("3- Cargar cuartos");
@@ -40,7 +41,8 @@ public class TPEDA {
             s.nextLine();
 
             while (op < 1 || op > 8) {
-                System.out.println("Opcion erronea. Elija de nuevo");;
+                System.out.println("Opcion erronea. Elija de nuevo");
+                System.out.println("Menu");
                 System.out.println("\n1- Generar fixture");
                 System.out.println("2- Cargar octavos");
                 System.out.println("3- Cargar cuartos");
@@ -90,7 +92,7 @@ public class TPEDA {
                     fixture.mostrarCampeon();
                     break;
                 case 7:
-
+                    System.out.println("Elija la fase que desea ver");
                     System.out.println("1- Octavos");
                     System.out.println("2- Cuartos");
                     System.out.println("3- Semifinales");
@@ -99,6 +101,7 @@ public class TPEDA {
                     int fase = s.nextInt();
                     while (fase < 1 || fase > 4) {
                         System.out.println("Fase erroenea ingreso de nuevo");
+                        System.out.println("Elija la fase que desea ver");
                         System.out.println("1- Octavos");
                         System.out.println("2- Cuartos");
                         System.out.println("3- Semifinales");

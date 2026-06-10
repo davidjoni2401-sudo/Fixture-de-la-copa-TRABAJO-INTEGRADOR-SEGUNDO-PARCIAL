@@ -110,7 +110,9 @@ public class ArbolFixture {
                     System.out.println("\n FINAL ");
                     System.out.println(f.getEquipo1() + " vs " + f.getEquipo2() + " Ganador " + f.getGanador());
 
-                }break;
+                }
+                break;
+
             }
         } catch (NullPointerException e) {
             System.out.println("No se han cargado la fase seleccionada");
@@ -243,8 +245,11 @@ public class ArbolFixture {
     }
 
     public void mostrarCampeon() {
-
-        System.out.println("\n CAMPEON ");
-        System.out.println(f.getGanador());
+        try {
+            System.out.println("\n CAMPEON ");
+            System.out.println(f.getGanador());
+        } catch (NullPointerException e) {
+            System.out.println("Primero se debe cargar el fixture de octavos o la fase previa");
+        }
     }
 }
