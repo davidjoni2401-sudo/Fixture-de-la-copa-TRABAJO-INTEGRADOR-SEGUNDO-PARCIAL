@@ -68,54 +68,52 @@ public class ArbolFixture {
     }
 
     public void mostrarFase(int fase) {
+        try {
+            switch (fase) {
 
-        switch (fase) {
+                case 1: {
 
-            case 1:
+                    System.out.println("\n OCTAVOS ");
+                    System.out.println(o1.getEquipo1() + " vs " + o1.getEquipo2() + " Ganador " + o1.getGanador());
+                    System.out.println(o2.getEquipo1() + " vs " + o2.getEquipo2() + " Ganador  " + o2.getGanador());
+                    System.out.println(o3.getEquipo1() + " vs " + o3.getEquipo2() + " Ganador  " + o3.getGanador());
+                    System.out.println(o4.getEquipo1() + " vs " + o4.getEquipo2() + " Ganador  " + o4.getGanador());
+                    System.out.println(o5.getEquipo1() + " vs " + o5.getEquipo2() + " Ganador  " + o5.getGanador());
+                    System.out.println(o6.getEquipo1() + " vs " + o6.getEquipo2() + " Ganador  " + o6.getGanador());
+                    System.out.println(o7.getEquipo1() + " vs " + o7.getEquipo2() + " Ganador  " + o7.getGanador());
+                    System.out.println(o8.getEquipo1() + " vs " + o8.getEquipo2() + " Ganador  " + o8.getGanador());
 
-                System.out.println("\n OCTAVOS ");
-
-                System.out.println(o1.getEquipo1() + " vs " + o1.getEquipo2() + " Ganador " + o1.getGanador());
-                System.out.println(o2.getEquipo1() + " vs " + o2.getEquipo2() + " Ganador  " + o2.getGanador());
-                System.out.println(o3.getEquipo1() + " vs " + o3.getEquipo2() + " Ganador  " + o3.getGanador());
-                System.out.println(o4.getEquipo1() + " vs " + o4.getEquipo2() + " Ganador  " + o4.getGanador());
-                System.out.println(o5.getEquipo1() + " vs " + o5.getEquipo2() + " Ganador  " + o5.getGanador());
-                System.out.println(o6.getEquipo1() + " vs " + o6.getEquipo2() + " Ganador  " + o6.getGanador());
-                System.out.println(o7.getEquipo1() + " vs " + o7.getEquipo2() + " Ganador  " + o7.getGanador());
-                System.out.println(o8.getEquipo1() + " vs " + o8.getEquipo2() + " Ganador  " + o8.getGanador());
-
+                }
                 break;
 
-            case 2:
+                case 2: {
 
-                System.out.println("\n CUARTOS");
+                    System.out.println("\n CUARTOS");
+                    System.out.println(c1.getEquipo1() + " vs " + c1.getEquipo2() + " Ganador " + c1.getGanador());
+                    System.out.println(c2.getEquipo1() + " vs " + c2.getEquipo2() + " Ganador " + c2.getGanador());
+                    System.out.println(c3.getEquipo1() + " vs " + c3.getEquipo2() + " Ganador " + c3.getGanador());
+                    System.out.println(c4.getEquipo1() + " vs " + c4.getEquipo2() + " Ganador " + c4.getGanador());
 
-                System.out.println(c1.getEquipo1() + " vs " + c1.getEquipo2() + " Ganador " + c1.getGanador());
-                System.out.println(c2.getEquipo1() + " vs " + c2.getEquipo2() + " Ganador " + c2.getGanador());
-                System.out.println(c3.getEquipo1() + " vs " + c3.getEquipo2() + " Ganador " + c3.getGanador());
-                System.out.println(c4.getEquipo1() + " vs " + c4.getEquipo2() + " Ganador " + c4.getGanador());
-
+                }
                 break;
 
-            case 3:
+                case 3: {
 
-                System.out.println("\n SEMIS ");
+                    System.out.println("\n SEMIS ");
+                    System.out.println(s1.getEquipo1() + " vs " + s1.getEquipo2() + " Ganador " + s1.getGanador());
+                    System.out.println(s2.getEquipo1() + " vs " + s2.getEquipo2() + " Ganador " + s2.getGanador());
 
-                System.out.println(s1.getEquipo1() + " vs " + s1.getEquipo2() + " Ganador " + s1.getGanador());
-                System.out.println(s2.getEquipo1() + " vs " + s2.getEquipo2() + " Ganador " + s2.getGanador());
-
+                }
                 break;
 
-            case 4:
+                case 4: {
+                    System.out.println("\n FINAL ");
+                    System.out.println(f.getEquipo1() + " vs " + f.getEquipo2() + " Ganador " + f.getGanador());
 
-                System.out.println("\n FINAL ");
-
-                System.out.println(f.getEquipo1() + " vs " + f.getEquipo2() + " Ganador " + f.getGanador());
-
-                break;
-
-            default:
-                System.out.println("Fase inexistente");
+                }break;
+            }
+        } catch (NullPointerException e) {
+            System.out.println("No se han cargado la fase seleccionada");
         }
 
     }

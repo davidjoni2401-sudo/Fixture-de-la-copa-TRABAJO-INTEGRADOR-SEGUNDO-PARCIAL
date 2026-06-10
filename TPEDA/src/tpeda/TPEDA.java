@@ -5,6 +5,7 @@
  */
 package tpeda;
 
+import static java.lang.System.exit;
 import java.util.Scanner;
 
 /**
@@ -32,11 +33,26 @@ public class TPEDA {
             System.out.println("4- Cargar semifinales");
             System.out.println("5- Cargar final");
             System.out.println("6- Mostrar campeon");
-            System.out.println("7- Salir");
+            System.out.println("7- Mostrar fase");
+            System.out.println("8- Salir");
 
             op = s.nextInt();
             s.nextLine();
 
+            while (op < 1 || op > 8) {
+                System.out.println("Opcion erronea. Elija de nuevo");;
+                System.out.println("\n1- Generar fixture");
+                System.out.println("2- Cargar octavos");
+                System.out.println("3- Cargar cuartos");
+                System.out.println("4- Cargar semifinales");
+                System.out.println("5- Cargar final");
+                System.out.println("6- Mostrar campeon");
+                System.out.println("7- Mostrar fase");
+                System.out.println("8- Salir");
+
+                op = s.nextInt();
+                s.nextLine();
+            }
             switch (op) {
 
                 case 1:
@@ -81,12 +97,22 @@ public class TPEDA {
                     System.out.println("4- Final");
 
                     int fase = s.nextInt();
-
+                    while (fase < 1 || fase > 4) {
+                        System.out.println("Fase erroenea ingreso de nuevo");
+                        System.out.println("1- Octavos");
+                        System.out.println("2- Cuartos");
+                        System.out.println("3- Semifinales");
+                        System.out.println("4- Final");
+                        fase = s.nextInt();
+                    }
                     fixture.mostrarFase(fase);
 
                     break;
+                case 8:
+                    exit(0);
+                    break;
             }
 
-        } while (op != 7);
+        } while (op > 0 && op < 9);
     }
 }
