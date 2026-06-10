@@ -9,7 +9,7 @@ public class NodoPartido {
     
     private NodoPartido izquierdo;
     private NodoPartido derecho;
-
+    
     public NodoPartido(String equipo1, String equipo2) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;

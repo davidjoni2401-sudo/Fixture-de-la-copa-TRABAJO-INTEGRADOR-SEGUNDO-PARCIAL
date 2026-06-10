@@ -18,76 +18,75 @@ public class TPEDA {
      */
     public static void main(String[] args) {
 
-     Scanner s = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
-ArbolFixture fixture = new ArbolFixture();
+        ArbolFixture fixture = new ArbolFixture(s);
 
-int op;
+        int op;
 
-do {
+        do {
 
-    System.out.println("\n1- Generar fixture");
-    System.out.println("2- Cargar octavos");
-    System.out.println("3- Cargar cuartos");
-    System.out.println("4- Cargar semifinales");
-    System.out.println("5- Cargar final");
-    System.out.println("6- Mostrar campeon");
-    System.out.println("7- Salir");
+            System.out.println("\n1- Generar fixture");
+            System.out.println("2- Cargar octavos");
+            System.out.println("3- Cargar cuartos");
+            System.out.println("4- Cargar semifinales");
+            System.out.println("5- Cargar final");
+            System.out.println("6- Mostrar campeon");
+            System.out.println("7- Salir");
 
-    op = s.nextInt();
-    s.nextLine();
+            op = s.nextInt();
+            s.nextLine();
 
-    switch(op) {
+            switch (op) {
 
-        case 1:
-            String[] equipos = new String[16];
+                case 1:
+                    String[] equipos = new String[16];
 
-    for(int i = 0; i < 16; i++) {
+                    for (int i = 0; i < 16; i++) {
 
-        System.out.print("Equipo " + (i+1) + ": ");
-        equipos[i] = s.nextLine();
+                        System.out.print("Equipo " + (i + 1) + ": ");
+                        equipos[i] = s.nextLine();
 
-    }
+                    }
 
-    fixture.generarFix(equipos);
+                    fixture.generarFix(equipos);
 
-    System.out.println("Fixture generado correctamente.");
-            break;
+                    System.out.println("Fixture generado correctamente.");
+                    break;
 
-        case 2:
-            fixture.cargarOctavos();
-            break;
+                case 2:
+                    fixture.cargarOctavos();
+                    break;
 
-        case 3:
-            fixture.cargarCuartos();
-            break;
+                case 3:
+                    fixture.cargarCuartos();
+                    break;
 
-        case 4:
-            fixture.cargarSemifinales();
-            break;
+                case 4:
+                    fixture.cargarSemifinales();
+                    break;
 
-        case 5:
-            fixture.cargarFinal();
-            break;
+                case 5:
+                    fixture.cargarFinal();
+                    break;
 
-        case 6:
-            fixture.mostrarCampeon();
-            break;
-            case 7:
+                case 6:
+                    fixture.mostrarCampeon();
+                    break;
+                case 7:
 
-    System.out.println("1- Octavos");
-    System.out.println("2- Cuartos");
-    System.out.println("3- Semifinales");
-    System.out.println("4- Final");
+                    System.out.println("1- Octavos");
+                    System.out.println("2- Cuartos");
+                    System.out.println("3- Semifinales");
+                    System.out.println("4- Final");
 
-    int fase = s.nextInt();
+                    int fase = s.nextInt();
 
-    fixture.mostrarFase(fase);
+                    fixture.mostrarFase(fase);
 
-    break;
-    }
+                    break;
+            }
 
-} while(op != 7);   
+        } while (op != 7);
     }
 }
-      
